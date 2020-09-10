@@ -21,12 +21,13 @@ def searching(update: Update, context: CallbackContext):
 
     search_message = context.bot.send_message(chat_id=update.effective_chat.id, text="Searching your subtitle file")
     sub_name = update.effective_message.text
-    index, title, keyword = search_sub(sub_name)
+    full_index, title, keyword = search_sub(sub_name)
     inline_keyboard = []
-    if len(index) == 0:
+    if len(full_index) == 0:
         context.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text="No results found")
         return
-
+    
+    index = full_index[:15]
     for i in index:
         subtitle = title[i-1]
         key = keyword[i-1]
