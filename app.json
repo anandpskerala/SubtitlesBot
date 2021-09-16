@@ -14,17 +14,17 @@
             "description": "Your bot token",
             "value": ""
         }
-      },
-"addons": [],
-"buildpacks": [
-  {
-      "url": "heroku/python"
-  }
-],
-"formation": {
-  "worker": {
-      "quantity": 1,
-      "size": "free"
-  }
-}
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
 }
