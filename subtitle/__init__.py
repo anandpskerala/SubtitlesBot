@@ -20,11 +20,12 @@ def search_sub(query):
     i = 0
 
     for a in search_links:
-        i += 1
-        index.append(i)
-        title.append(a.text)
         key = a.get("href").split("/")
-        keywords.append(key[1])
+        if key[1] not in keywords:
+            i += 1
+            index.append(i)
+            title.append(a.text)
+            keywords.append(key[1])
 
     return index, title, keywords
 
